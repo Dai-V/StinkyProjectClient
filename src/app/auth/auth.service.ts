@@ -34,6 +34,12 @@ export class AuthService {
 
   logout ()
   {
+    localStorage.removeItem("stinkyToken1");
+    this.setAuthStatus(false);
+  }
 
+  isAuthenticated() : boolean
+  {
+    return localStorage.getItem("stinkyToken1")!=null;
   }
 }
